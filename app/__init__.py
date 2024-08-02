@@ -17,7 +17,7 @@ def hello():
     db = mysql.connector.connect(
         host=os.getenv("MYSQL_SERVICE_HOST", "localhost"),
         port=int(os.getenv("MYSQL_SERVICE_PORT", 3306)),  # Default to 3306 if not set
-        user="root",  # Change if using a different user
+        user=os.getenv("MYSQL_DB_USER", "admin"),  # Change if using a different user
         passwd=os.getenv("MYSQL_DB_PASSWORD"),
         database="pyapplicationdb",
         auth_plugin="mysql_native_password"
