@@ -1,7 +1,7 @@
 CREATE DATABASE IF NOT EXISTS pyapplicationdb;
 USE pyapplicationdb;
 
-CREATE USER 'admin'@'%' IDENTIFIED BY 'admin@123';
+CREATE USER IF NOT EXISTS 'admin'@'%' IDENTIFIED BY 'admin@123';
 GRANT ALL PRIVILEGES ON pyapplicationdb.* TO 'admin'@'%';
 FLUSH PRIVILEGES;
 
